@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Title</title>
+    <style>
+
+        @media screen and (max-width: 850px) {
+            .rectangle {
+                width: 75%;
+            }
+        }
+    </style>
+</head>
+<body>
+<table class="rectangle"
+       style=" margin-right: auto; margin-left: auto; width: 62%; height: auto; border: 2px solid #ff8000; border-radius: 8px; padding-bottom: 5px; padding-top: 30px;">
+	<tr>
+        <th style="padding-bottom: 0px;">
+            <img src="https://s3.us-east-2.amazonaws.com/bs-finalproject-uploads/public/assets/app-logo.png" style=" height: 110px; width: 200px;">
+        </th>
+    </tr>
+	<tr>
+        <th style="padding-bottom: 10px;">
+            <p class="message-content"
+               style="color: #ff8000; margin-right: auto;  margin-left: auto; height: 10%; width: 80%; font-family: 'Work Sans', Helvetica, sans-serif; font-size: 25px; font-weight: normal; line-height: 18px; text-align: justify;">
+                New Order!</p>
+            <p class="message-content"
+               style="margin-right: auto;  margin-left: auto; height: 10%; width: 80%; color: #757575; font-family: 'Work Sans', Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 18px; text-align: justify;">
+				A new order from ${name} was received!
+            </p>
+			<p class="message-content"
+               style="margin-right: auto;  margin-left: auto; height: 10%; width: 80%; color: #757575; font-family: 'Work Sans', Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 18px; text-align: justify;">
+				Needs to be delivered in 24 hours to: ${address}
+            </p>
+			<p class="message-content"
+               style="margin-right: auto;  margin-left: auto; height: 10%; width: 80%; color: #757575; font-family: 'Work Sans', Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 18px; text-align: justify;">
+                Your verification code is:
+            </p>
+			<p class="message-content"
+               style="margin-right: auto;  margin-left: auto; height: 10%; width: 80%; color: #757575; font-family: 'Work Sans', Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 18px; text-align: justify;">
+               ${order}
+            </p>
+        </th>
+    </tr>
+    <tr>
+        <th style="padding-bottom: 27px;">
+            <p class="message-content"
+               style="margin-right: auto;  margin-left: auto; height: 10%; width: 80%; color: #757575; font-family: 'Work Sans', Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 18px; text-align: justify;">
+                Thanks for shopping with us!
+			</p>
+        </th>
+    </tr>
+</table>
+</body>
+</html>

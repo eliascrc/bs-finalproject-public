@@ -1,0 +1,29 @@
+@mixin heading {
+  font-weight: bold;
+  text-align: center;
+}
+
+@mixin heading-hero {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+
+  @media only screen and (max-width: $bp-sm) {
+    font-size: 1.5rem;
+  }
+}
+
+@mixin heading-primary {
+  font-size: 2.18rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+
+  @media only screen and (max-width: $bp-sm) {
+    font-size: 1.8rem;
+  }
+}
+
+@mixin heading-secondary {
+  font-size: 2.18rem;
+  margin-bottom: 1.25rem;
+}

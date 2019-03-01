@@ -1,0 +1,73 @@
+version: 2
+jobs:
+  test:
+
+    docker:
+    - image: circleci/openjdk:8-jdk
+
+    working_directory: ~/repo
+
+    environment:
+      # Default JVM maximum heap limit
+      MAVEN_OPTS: -Xmx3200m
+
+    steps:
+    - checkout
+
+    # Download and cache dependencies
+    - restore_cache:
+        keys:
+        - v1-dependencies-{{ checksum "pom.xml" }}
+        # fallback to using the latest cache if no exact match is found
+        - v1-dependencies-
+
+    # store the version denoted by the POM onto the env
+    - run: mkdir -p target
+    - run: mvn dependency:go-offline
+    - run: mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -Ev '(^\[|Download)' > target/version.txt
+
+    - save_cache:
+        paths:
+        - ~/.m2
+        key: v1-dependencies-{{ checksum "pom.xml" }}
+
+    - run: mvn package
+    - persist_to_workspace:
+        root: target
+        paths:
+        - bs-finalproject-0.1.war
+        - version.txt
+
+  deploy:
+
+    docker:
+    - image: circleci/python:2.7
+
+    steps:
+    - attach_workspace:
+        at: /tmp/workspace
+
+    - run: sudo pip install awscli
+
+    - run: |
+        export PROJECT_VERSION=$(cat /tmp/workspace/version.txt)
+        aws s3 cp /tmp/workspace/bs-finalproject-0.1.war s3://bs-finalproject-deployment/${PROJECT_VERSION}/bs-finalproject-0.1.war --region us-east-2
+        aws elasticbeanstalk delete-application-version --application-name bs-finalproject --version-label ${PROJECT_VERSION} --region us-east-2
+        aws elasticbeanstalk create-application-version --application-name bs-finalproject --version-label ${PROJECT_VERSION} --source-bundle S3Bucket="bs-finalproject-deployment",S3Key="${PROJECT_VERSION}/bs-finalproject-0.1.war" --region us-east-2
+        aws elasticbeanstalk update-environment --application-name bs-finalproject --version-label ${PROJECT_VERSION} --environment-name BsFinalproject-env --region us-east-2
+workflows:
+  version: 2
+  wf1:
+    jobs:
+    - test:
+        filters:
+          branches:
+            only:
+            - dev
+    - deploy:
+        filters:
+          branches:
+            only:
+            - dev
+        requires:
+        - test

@@ -1,0 +1,79 @@
+@mixin animated-input {
+  -webkit-appearance: none;
+  width: 100%;
+  border: 0;
+  font-family: inherit;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  border-bottom: 2px solid $color-gray;
+  background: none;
+  border-radius: 0;
+  color: $color-gray-dark;
+  transition: all .15s ease;
+
+  &:hover {
+    background: rgba(gray,.03);
+  }
+
+  &:not(:placeholder-shown) + span {
+      color: $color-gray-dark;;
+      transform: translateY(-26px) scale(.75);
+  }
+
+  &:focus {
+    background: none;
+    outline: none;
+  }
+
+  &:focus + span {
+    color: $color-secondary;
+    transform: translateY(-26px) scale(.75);
+  }
+
+  &:focus + span + &-border {
+    transform: scaleX(1);
+  }
+
+  &--invalid {
+    border-bottom: 2px solid $color-error;
+
+    & + span {
+      color: $color-error;
+    }
+
+    &:not(:placeholder-shown) + span {
+      color: $color-error;
+    }
+
+    &:focus + span {
+      color: $color-error;
+    }
+
+    &:focus + span + span {
+      background: $color-error;
+    }
+  }
+}
+
+@mixin animated-content {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  font-size: 1rem;
+  color: #9098A9;
+  transform-origin: 0 0;
+  transition: all .2s ease;
+  cursor: text;
+}
+
+@mixin animated-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: $color-secondary;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: all .15s ease;
+}

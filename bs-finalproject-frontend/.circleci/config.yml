@@ -1,0 +1,65 @@
+version: 2
+jobs:
+  package:
+
+    docker:
+    - image: circleci/node:10.15
+
+    working_directory: ~/repo
+
+    steps:
+    - checkout
+
+    - restore_cache: # special step to restore the dependency cache
+        key: dependency-cache-{{ checksum "package.json" }}
+
+    - run:
+        name: Setup Dependencies
+        command: npm install
+
+    - save_cache: # special step to save the dependency cache
+        key: dependency-cache-{{ checksum "package.json" }}
+        paths:
+        - ./node_modules
+
+    - run: 
+        name: Package react
+        command: npm run build
+    
+    - persist_to_workspace:
+        root: build
+        paths: .
+
+  deploy:
+
+    docker:
+    - image: circleci/python:2.7
+
+    steps:
+    - attach_workspace:
+        at: /tmp/workspace
+
+    - run: 
+        name: Install AWS CLI
+        command: sudo pip install awscli
+
+    - run: 
+        name: Upload to S3 Bucket
+        command: aws s3 sync /tmp/workspace s3://bs-finalproject-app --region us-east-2
+
+workflows:
+  version: 2
+  wf1:
+    jobs:
+    - package:
+        filters:
+          branches:
+            only:
+            - dev
+    - deploy:
+        filters:
+          branches:
+            only:
+            - dev
+        requires:
+        - package

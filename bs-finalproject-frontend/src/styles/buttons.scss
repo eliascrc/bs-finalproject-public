@@ -1,0 +1,57 @@
+@mixin button {
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color .5s ease, background-color .5s ease;
+  border-radius: 0.2rem;
+}
+
+@mixin primary-button {
+  padding: 0.8rem 2rem;
+  border: 2px solid $color-secondary;
+  font-weight: 600;
+  color: white;
+  background: $color-secondary;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+
+  &:hover {
+    background: $color-white;
+    color: $color-secondary;
+  }
+
+  &:focus {
+    outline: 0.2rem solid $color-primary-alpha;
+  }
+
+  &:disabled {
+    border: 2px solid $color-gray;
+    background: $color-gray;
+  }
+}
+
+@mixin primary-button-orange {
+  padding: 0.8rem 2rem;
+  border: 2px solid $color-primary;
+  font-weight: 600;
+  color: white;
+  background: $color-primary;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+
+  &:hover {
+    background: $color-white;
+    color: $color-primary;
+  }
+
+  &:focus {
+    outline: 0.2rem solid $color-secondary-alpha;
+  }
+
+  &:disabled {
+    border: 2px solid $color-gray;
+    background: $color-gray;
+  }
+}
+

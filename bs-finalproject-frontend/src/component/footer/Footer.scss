@@ -1,0 +1,23 @@
+@import '../../index.scss';
+@import '../../styles/layout.scss';
+@import '../../styles/anchors.scss';
+
+.footer {
+
+  background: $color-black;
+  color: $color-white;
+  font-size: 0.9rem;
+  padding: 1rem 0.5rem;
+  font-weight: 300;
+  text-align: center;
+  min-height: 4.69rem;
+
+  &__github {
+    margin-bottom: 0.3rem;
+  }
+
+  &__anchor {
+    @include primary-anchor;
+  }
+
+}

@@ -1,0 +1,133 @@
+@import '../../index.scss';
+@import '../../styles/layout.scss';
+@import '../../styles/headings.scss';
+@import '../../styles/buttons.scss';
+
+.payment-list {
+
+  &__error-message {
+    font-size: 0.9rem;
+    color: crimson;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  &__success-message {
+    font-size: 0.9rem;
+    color: seagreen;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  &__user-address {
+    @include flex-center;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    width: 100%;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $color-gray-light;
+  }
+
+  &__brand,
+  &__expiration {
+    @include flex-center;
+    justify-content: flex-start;
+    flex-basis: 20%;
+
+    @media only screen and (max-width: $bp-md) {
+      flex-basis: 30%;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__card-number {
+    @include flex-center;
+    justify-content: flex-start;
+    flex-basis: 50%;
+
+    @media only screen and (max-width: $bp-md) {
+      flex-basis: 40%;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__delete,
+  &__select {
+    @include flex-center;
+    flex-basis: 5%;
+    font-size: 1.5rem;
+    color: $color-primary;
+    cursor: pointer;
+    transition: color .5s ease, background-color .5s ease;
+
+
+    &:hover {
+      background: $color-white;
+      color: $color-secondary;
+    }
+  
+    &:focus {
+      outline: 0.2rem solid $color-secondary-alpha;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+      margin-top: 2rem;
+      flex-basis: 50%;
+    }
+  }
+
+  &__select {
+    @media only screen and (max-width: $bp-md) {
+      order: 1;
+    }
+  }
+
+  &__add-wrapper > span,
+  &__add-wrapper {
+    @include flex-center;
+    width: 100%;
+  }
+
+  &__add {
+    @include flex-center;
+    display: inline-block;
+    width: 10rem;
+    margin: 1rem 0;
+    padding: 0.8rem 0;
+    font-size: 1rem;
+    color: $color-white;
+    background: $color-primary;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    border: 2px solid $color-primary;
+    transition: color .5s ease, background-color .5s ease;
+
+
+    &:hover {
+      background: $color-white;
+      color: $color-secondary;
+      border: 2px solid $color-secondary;
+    }
+  
+    &:focus {
+      outline: 0.2rem solid $color-secondary-alpha;
+    }
+  }
+
+  &__delete {
+    color: $color-gray-dark;
+  }
+
+}

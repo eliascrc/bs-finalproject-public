@@ -1,0 +1,71 @@
+@import '../../index.scss';
+@import '../../styles/layout.scss';
+@import '../../styles/constants.scss';
+@import '../../styles/headings.scss';
+@import '../../styles/buttons.scss';
+
+.home {
+
+  &__hero {
+    background: url($HERO_IMAGE_URL);
+    background-size: cover;
+    height: 100vh;
+  }
+
+  &__hero-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__hero-content {
+    @include flex-center;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.521);
+    flex-basis: 100%;
+    padding: 4rem 2rem;
+    color: white;
+    text-align: center;
+  }
+
+  &__hero-heading {
+    @include heading;
+    @include heading-hero;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1rem;
+
+    @media only screen and (max-width: $bp-md) {
+      font-size: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      font-size: 2rem;
+    }
+
+  }
+
+  &__hero-description {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+
+    @media only screen and (max-width: $bp-md) {
+      font-size: 1rem;
+    }
+
+  }
+
+  &__hero-description-paragraph {
+    margin-bottom: 1rem;
+  }
+
+  &__hero-button {
+    @include button;
+    @include primary-button-orange;
+    margin-top: 1rem;
+    max-width: 12rem;
+  }
+
+}

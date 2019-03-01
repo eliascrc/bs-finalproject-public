@@ -1,0 +1,131 @@
+@import '../../index.scss';
+@import '../../styles/layout.scss';
+@import '../../styles/buttons.scss';
+
+.header {
+  @include flex-center;
+  min-height: 3rem;
+  width: 100%;
+  background: $color-white;
+  min-height: 7rem;
+  border-bottom: 1px solid $color-gray-light;
+
+  &__container {
+    @include container;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media only screen and (max-width: $bp-sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__brand-wrapper, &__links {
+    flex-basis: 50%;
+  }
+
+  &__brand-wrapper {
+    @media only screen and (max-width: $bp-sm) {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__brand {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $color-primary;
+    transition: color .5s ease, background-color .5s ease;
+    
+    &:hover {
+      color: $color-secondary;
+    }
+
+    &:focus {
+      outline: 0.2rem solid $color-secondary-alpha;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      font-size: 1rem;
+    }
+  }
+
+  &__links {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__link {
+    @include button;
+    @include flex-center;
+
+    padding: 0.5rem 0.3rem;
+    color: $color-black;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &:focus {
+      outline: 0.2rem solid $color-secondary-alpha;
+    }
+
+    &:hover > .header__quantity {
+      color: black;
+    }
+  }
+
+  &__icon {
+    font-size: 1.8rem;
+  }
+
+  &__link--bag {
+    position: relative;
+    margin-right: 0.8rem;
+  }
+
+  &__quantity {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: $color-primary;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 50%;
+    padding: 0 0.3rem;
+    transition: color .5s ease, background-color .5s ease;
+  }
+
+  &__login-icon {
+    margin-right: 0.3rem;
+  }
+
+  &__login {
+    color: white;
+    background: $color-black;
+    color: $color-white;
+    border: 2px solid $color-black;
+    padding: 0.45rem 1rem;
+    border-radius: 0.3rem;
+    letter-spacing: 0.05rem;
+    transition: color .5s ease, background-color .5s ease;
+    
+    &:hover {
+      background: $color-white;
+      color: $color-black;
+    }
+
+    &:focus {
+      outline: 0.2rem solid $color-primary-alpha;
+    }
+  }
+
+  &__app-logo {
+    max-width: 10rem;
+  }
+ 
+}

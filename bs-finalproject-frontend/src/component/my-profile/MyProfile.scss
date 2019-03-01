@@ -1,0 +1,180 @@
+@import '../../index.scss';
+@import '../../styles/layout.scss';
+@import '../../styles/constants.scss';
+@import '../../styles/headings.scss';
+@import '../../styles/buttons.scss';
+
+
+.my-profile {
+
+  &__section {
+    @include section;
+    padding: 0;
+    padding-bottom: 5rem;
+  }
+
+  &__content-container {
+    @include container;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  &__user-section {
+    @include padding-standard;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid $color-gray-light;
+    margin-bottom: 2rem;
+  }
+
+  &__profile-photo {
+    flex-basis: 45%;
+    text-align: right;
+    padding-right: 2rem;
+    font-size: 10rem;
+    color: $color-primary;
+
+    @media only screen and (max-width: $bp-sm) {
+      font-size: 8rem;
+      flex-basis: 100%;
+      text-align: center;
+      padding-right: 0;
+    }
+
+  }
+
+  &__details {
+    padding-top: 2rem;
+    flex-basis: 55%;
+
+    @media only screen and (max-width: $bp-sm) {
+      padding-top: 0;
+      flex-basis: 100%;
+    }
+  }
+
+  &__name {
+    font-size: 2rem;
+
+    @media only screen and (max-width: $bp-sm) {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__email {
+    font-style: italic;
+
+    @media only screen and (max-width: $bp-sm) {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__heading {
+    @include heading;
+    @include heading-primary;
+    color: $color-black;
+    margin-bottom: 0;
+    font-size: 2rem;
+    flex-basis: 100%;
+    margin-bottom: 2rem;
+  }
+
+  &__address-heading,
+  &__payment-heading,
+  &__history-heading {
+    font-size: 1.5rem;
+    color: $color-primary;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  &__history-heading {
+    margin-bottom: 0;
+  }
+
+  &__summary {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    width: 100%;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $color-gray-light;
+
+  }
+
+  &__summary-product {
+    flex-basis: 70%;  
+    display: flex;
+    flex-wrap: wrap;
+
+    @media only screen and (max-width: $bp-md) {
+      flex-basis: 50%; 
+    }
+  }
+
+  &__summary-price,
+  &__summary-quantity,
+  &__summary-total {
+    @include flex-center;
+    flex-basis: 10%;  
+    text-align: center;
+
+    @media only screen and (max-width: $bp-md) {
+      flex-basis: 15%; 
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      flex-basis: 20%;
+    }
+  }
+
+  &__summary-price {
+    @media only screen and (max-width: $bp-sm) {
+      display: none;
+    }
+  }
+
+  &__summary-total {
+    text-align: right; 
+  }
+
+  &__image-wrapper {
+    flex-basis: 10%;
+
+    @media only screen and (max-width: $bp-md) {
+      display: none;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__product-details {
+    @include flex-center;
+    padding-left: 2rem;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @media only screen and (max-width: $bp-md) {
+      padding: 0;
+    }
+  }
+
+  &__product-name {
+    margin-bottom: 0.6rem;
+  }
+
+  &__product-size {
+    @include flex-center;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 0.6rem;
+  }
+
+}

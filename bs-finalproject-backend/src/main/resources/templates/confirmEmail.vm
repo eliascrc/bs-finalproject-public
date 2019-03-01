@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Title</title>
+    <style>
+        .confirm-email-button:hover {
+            background-color: #FFFFFF !important;
+            border: 1px solid #EFA42F !important;
+            color: #EFA42F !important;
+        }
+
+        @media screen and (max-width: 850px) {
+            .footer-left-text, .footer-right-text {
+                float: none !important;
+                padding-top: 0px !important;
+            }
+
+            .footer {
+                text-align: center !important;
+                width: 75% !important;
+            }
+
+            .rectangle {
+                width: 75% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<table class="rectangle"
+       style=" margin-right: auto; margin-left: auto; width: 62%; height: auto; border: 2px solid #EFA42F; border-radius: 8px; padding-bottom: 5px;">
+    <tr>
+        <th style="padding-bottom: 27px;">
+            <img src="http://www.talent.cr/assets/images/talent-logo.png" style=" height: 110px; width: 129px;">
+        </th>
+    </tr>
+    <tr>
+        <th style="padding-bottom: 27px;">
+            <p class="message-content"
+               style="margin-right: auto;  margin-left: auto; height: 10%; width: 80%; color: #757575; font-family: 'Source Sans Pro'; font-size: 14px; font-weight: normal; line-height: 18px; text-align: justify;">
+                Hi ${firstName} ${lastName},</p>
+            <p class="message-content"
+               style="margin-right: auto;  margin-left: auto; height: 10%; width: 80%; color: #757575; font-family: 'Source Sans Pro'; font-size: 14px; font-weight: normal; line-height: 18px; text-align: justify;">
+                Welcome to Talent! Before you start, you must confirm your email address. If you didn&#39;t request to join,
+                ignore this email.
+            </p>
+        </th>
+    </tr>
+    <tr>
+        <th style="padding-bottom: 27px;">
+            <a target="_blank" href="${link}">
+                <button class="confirm-email-button" style="height: 58px; width: 175px; border-radius: 8px; background-color: #EFA42F; box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.5);
+            border: none; cursor: pointer; color: #FFFFFF; font-family: 'Source Sans Pro'; font-size: 14px; font-weight: normal; line-height: 18px;">
+                    Confirm email
+                </button>
+            </a>
+        </th>
+    </tr>
+    <tr>
+        <th style="padding-bottom: 27px;">
+            <p class="message-content"
+               style="margin-right: auto;  margin-left: auto; height: 10%; width: 80%; color: #757575; font-family: 'Source Sans Pro'; font-size: 14px; font-weight: normal; line-height: 18px; text-align: justify;">
+                Thanks!</p>
+            <p class="message-content"
+               style="margin-right: auto;  margin-left: auto; height: 10%; width: 80%; color: #757575; font-family: 'Source Sans Pro'; font-size: 14px; font-weight: normal; line-height: 18px; text-align: justify;">
+                The Talent! Team</p>
+        </th>
+    </tr>
+</table>
+<footer class="footer"
+        style="margin-left: auto; margin-right: auto; width: 62%; color: #9B9B9B; font-family: 'Source Sans Pro'; font-size: 14px; line-height: 18px;">
+    <p class="footer-left-text" style="float: left;">Want to stop getting emails from Talent?
+        <a class="unsubscribe" target="_blank" href="http://www.talent.cr/#/"
+           style="color: #007BFF; text-decoration: none;">Unsubscribe</a></p>
+    <p class="footer-right-text" style="float: right;">Talent! &copy; 2018</p>
+</footer>
+</body>
+</html>

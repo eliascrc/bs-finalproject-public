@@ -1,0 +1,57 @@
+@import '../../index.scss';
+
+.product-overview {
+  cursor: pointer;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 1rem 0;
+  transition: border 0.5s ease;
+  border-bottom: 4px solid transparent;
+
+  &:hover {
+    border-bottom: 4px solid $color-primary;
+  }
+
+  &:focus {
+    outline: 4px solid $color-secondary-alpha;
+  }
+
+  &__image-wrapper {
+    position: relative;
+    width: 14.75rem;
+    margin: 0 auto;
+  }
+
+  &__image {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  &__caption {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+  }
+
+  &__name {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    flex-basis: 100%;
+  }
+
+  &__price {
+    color: $color-gray-dark;
+    font-weight: bold;
+    flex-basis: 50%;
+  }
+
+  &__stars {
+    text-align: center;
+    color: $color-primary;
+    flex-basis: 50%;
+  }
+
+}

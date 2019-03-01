@@ -1,0 +1,52 @@
+@import '../../index.scss';
+@import '../../styles/layout.scss';
+@import '../../styles/headings.scss';
+@import '../../styles/buttons.scss';
+
+.confirm {
+
+  &__form {
+    width: 100%;
+    max-width: 30rem;
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  &__input-error {
+    color: $color-error;
+    font-size: 0.8rem;  
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__oops-message {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  &__message {
+    font-size: 0.95rem;
+    max-width: 20rem;
+    margin: 0 auto 0.5rem;
+  }
+
+  &__input {
+    display: block;
+    font-size: 2rem;
+    max-width: 10rem;
+    margin: 0 auto 2rem;
+    padding: 1rem 0.5rem;
+    border-radius: 0.4rem;
+    text-align: center;
+    border: 2px solid $color-primary;
+    font-family: $default-font-family;
+  }
+
+  &__submit {
+    @include button;
+    @include primary-button;
+    max-width: 20rem;
+  }
+
+}

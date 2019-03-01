@@ -1,0 +1,11 @@
+@mixin primary-anchor {
+  color: $color-primary;
+    
+  &:focus {
+    outline: 0.2rem solid $color-secondary-alpha;
+  }
+
+  &:hover {
+    color: $color-secondary;
+  }
+}

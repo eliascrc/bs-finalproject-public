@@ -1,0 +1,213 @@
+@import '../../index.scss';
+@import '../../styles/layout.scss';
+@import '../../styles/constants.scss';
+@import '../../styles/headings.scss';
+@import '../../styles/buttons.scss';
+@import '../../styles/inputs.scss';
+@import '../../styles/anchors.scss';
+
+.list-products {
+
+  &__section {
+    @include section;
+    padding: 0;
+    padding-bottom: 3rem;
+  }
+
+  &__heading-wrapper {
+    @include padding-standard;
+    width: 100%;
+    height: 10rem;
+    border-bottom: 1px solid $color-gray-light;
+  }
+
+  &__heading-container {
+    @include container;
+    @include flex-center;
+    height: 100%;
+  }
+
+  &__heading {
+    @include heading;
+    @include heading-primary;
+    color: $color-black;
+    margin-bottom: 0;
+  }
+
+  &__search-wrapper {
+    @include padding-standard;
+    width: 100%;
+    min-height: 4rem;
+    border-bottom: 1px solid $color-gray-light;
+  }
+
+  &__search-container {
+    @include container;
+    @include flex-center;
+    justify-content: flex-start;
+    min-height: 4rem;
+    flex-wrap: wrap;
+  }
+
+  &__select-wrapper {
+    @include flex-center;
+    justify-content: flex-start;
+    flex-basis: 25%;
+    padding-right: 1rem;
+
+    @media only screen and (max-width: $bp-lg) {
+      flex-basis: 50%;
+      margin: 1rem 0;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      flex-basis: 100%;
+    }
+  }
+
+  &__label {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    flex-basis: 40%;
+    text-align: right;
+    padding: 0.5rem;
+    color: $color-gray-dark;
+  }
+
+  &__select {
+    flex-basis: 60%;
+    font-size: 0.95rem;
+  }
+
+  &__select__control.css-vj8t7z {
+    cursor: pointer;
+    border: none;
+  }
+
+  &__select__indicator-separator.css-d8oujb {
+    background: $color-gray;
+  }
+
+  &__select__indicator.css-1ep9fjw {
+    color: $color-gray-dark;
+  }
+
+  &__search-bar-wrapper {
+    @include flex-center;
+    justify-content: flex-end;
+    flex-basis: 50%;
+
+    @media only screen and (max-width: $bp-lg) {
+      flex-basis: 100%;
+      margin-bottom: 1rem;
+      justify-content: center;
+    }
+  }
+
+  &__label--search-bar {
+    display: none;
+  }
+
+  &__search-bar {
+    padding: 0.5rem 0.2rem 0.5rem;
+    font-size: 0.95rem;
+    font-family: $default-font-family;
+    flex-basis: 50%;
+    border: none;
+    border-bottom: 1px solid $color-gray;
+
+    @media only screen and (max-width: $bp-sm) {
+      flex-basis: 70%;
+    }
+  }
+
+  &__search-button {
+    padding: 0.1rem 0.2rem 0;
+    font-size: 1.2rem;
+    flex-basis: 5%;
+    cursor: pointer;
+    color: $color-gray-dark;
+  }
+
+  &__catalog {
+    @include container;
+    @include flex-center;
+    @include padding-standard;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &__product-wrapper {
+    flex-basis: 25%;
+
+    @media only screen and (max-width: $bp-lg) {
+      flex-basis: 33.333%;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+      flex-basis: 50%;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      flex-basis: 100%;
+    }
+  }
+
+  &__paginate {
+    display: inline-block;
+    margin: 1rem auto 0;
+  }
+
+  &__paginate > ul {
+    display: flex;
+  }
+
+  &__paginate-button, &__arrow {
+    cursor: pointer;
+    padding: 0 0.8rem;
+    min-height: 2rem;
+    @include flex-center;
+    padding-bottom: 0.3rem;
+    border-bottom: 4px solid transparent;
+    transition: color .5s ease, border .5s ease;
+  }
+
+  &__paginate-button {
+    border-right: none;
+    font-weight: bold;
+    color: $color-black;
+  }
+
+  &__paginate-button--activate {
+    color: $color-secondary;
+    border-bottom: 4px solid $color-secondary;
+  }
+
+  &__arrow {
+    color: $color-primary;
+  }
+
+  &__arrow--previous {
+    margin-right: 1rem;
+  }
+
+  &__arrow--next {
+    margin-left: 1rem;
+  }
+
+  &__paginate-button:hover,
+  &__arrow:hover {
+    color: $color-primary;
+    border-bottom: 4px solid $color-primary;
+  }
+
+  &__paginate-button:focus,
+  &__arrow:focus {
+    outline: 2px solid $color-primary;
+  }
+
+  &__hidden {
+    display: none;
+  }
+
+}

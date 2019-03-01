@@ -1,0 +1,40 @@
+{
+  "name": "bs-finalproject-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "aws-amplify": "^1.1.19",
+    "jwt-decode": "^2.2.0",
+    "query-string": "^6.2.0",
+    "react": "^16.8.1",
+    "react-alice-carousel": "^1.13.1",
+    "react-dom": "^16.8.1",
+    "react-paginate": "^6.3.0",
+    "react-redux": "^6.0.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.5",
+    "react-select": "^2.4.1",
+    "react-slick": "^0.23.2",
+    "react-stripe-checkout": "^2.6.3",
+    "redux": "^4.0.1",
+    "slick-carousel": "^1.8.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
+}

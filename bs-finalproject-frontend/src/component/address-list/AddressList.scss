@@ -1,0 +1,147 @@
+@import '../../index.scss';
+@import '../../styles/layout.scss';
+@import '../../styles/headings.scss';
+@import '../../styles/buttons.scss';
+
+.address-list {
+
+  &__error-message {
+    font-size: 0.9rem;
+    color: crimson;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  &__success-message {
+    font-size: 0.9rem;
+    color: seagreen;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  &__user-address {
+    @include flex-center;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    width: 100%;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $color-gray-light;
+  }
+
+  &__city {
+    @include flex-center;
+    justify-content: flex-start;
+    flex-basis: 15%;
+
+    @media only screen and (max-width: $bp-md) {
+      flex-basis: 20%;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      flex-basis: 40%;
+    }
+  }
+
+  &__address {
+    @include flex-center;
+    justify-content: flex-start;
+    flex-basis: 70%;
+
+    @media only screen and (max-width: $bp-lg) {
+      flex-basis: 60%;
+    }
+
+  }
+
+  &__save,
+  &__delete,
+  &__select {
+    @include flex-center;
+    flex-basis: 5%;
+    font-size: 1.5rem;
+    color: $color-primary;
+    cursor: pointer;
+    transition: color .5s ease, background-color .5s ease;
+
+
+    &:hover {
+      background: $color-white;
+      color: $color-secondary;
+    }
+  
+    &:focus {
+      outline: 0.2rem solid $color-secondary-alpha;
+    }
+  }
+
+  &__select {
+    @media only screen and (max-width: $bp-sm) {
+      flex-basis: 10%;
+      order: 1;
+    }
+  }
+
+  &__save,
+  &__delete,
+  &__select {
+    @media only screen and (max-width: $bp-sm) {
+      margin-top: 2rem;
+      flex-basis: 33.333%;
+    }
+  }
+
+  &__add {
+    @include flex-center;
+    display: inline-block;
+    width: 11rem;
+    margin: 1rem auto;
+    padding: 0.8rem 0.3rem;
+    font-size: 1rem;
+    color: $color-white;
+    background: $color-primary;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    border: 2px solid $color-primary;
+    transition: color .5s ease, background-color .5s ease;
+
+
+    &:hover {
+      background: $color-white;
+      color: $color-secondary;
+      border: 2px solid $color-secondary;
+    }
+  
+    &:focus {
+      outline: 0.2rem solid $color-secondary-alpha;
+    }
+  }
+
+  &__add-text {
+    margin-left: 0.5rem;
+  }
+
+  &__delete {
+    color: $color-gray-dark;
+  }
+
+  &__address--textarea {
+    height: 2.1rem;
+    resize: none;
+    border: none;
+    border-bottom: 1px solid $color-secondary;
+    font-family: $default-font-family;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.2rem;
+
+    &:focus {
+      outline: 0.2rem solid $color-primary-alpha;
+    }
+  }
+
+}
